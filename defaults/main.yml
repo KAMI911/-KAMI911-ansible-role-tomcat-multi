@@ -202,6 +202,9 @@ tomcat_java_gc_g1: -XX:MaxGCPauseMillis=100 -XX:ParallelGCThreads=8 -XX:Initiati
 
 tomcat_java_gc_other:
 
+tomcat_java_gc_log: "-Xlog:gc*=debug,heap*=debug,safepoint=debug,age*=debug,stringdedup*=debug,gc+heap=trace:'${CATALINA_BASE}/logs/gc/gc_%t_%p.log':time,uptimenanos,pid,tid,level,tags:filecount=200,filesize=1G"
+tomcat_java_gc_log_old: "-Xloggc:'${CATALINA_BASE}/logs/gc/gc_$(date +%Y-%m-%d_%H%M).log' -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=200 -XX:GCLogFileSize=1G -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintStringDeduplicationStatistics"
+
 # JMX configuration
 tomcat_jmx_host: '{{ ansible_default_ipv4.address | default("127.0.0.1") }}'
 tomcat_shutdown_command: 'SHUTDOWN-Hr7lA6dgGQ'
