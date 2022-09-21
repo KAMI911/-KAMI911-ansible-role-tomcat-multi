@@ -11,6 +11,8 @@
     group: "{{ tomcat_system_group }}"
     copy: false
     creates: "'{{ tomcat_dir }}/bin/catalina.sh"
+  notify:
+    - restart tomcat services
   when: not __app_installed.stat.exists or tomcat_force_update
 
 - name: create symlink for 'tomcat' to the installation directory
