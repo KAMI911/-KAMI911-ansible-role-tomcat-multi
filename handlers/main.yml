@@ -1,0 +1,14 @@
+---
+- name: systemd reload
+  become: true
+  systemd:
+    daemon_reload: true
+  listen: 'systemd daemon reload'
+
+- name: restart tomcat
+  service:
+    name: '{{ item.instance_name }}'
+    state: restarted
+    enabled: '{{ item.service_enabled }}'
+  with_items: "{{ tomcat_instance }}"
+  listen: 'restart tomcat services'
