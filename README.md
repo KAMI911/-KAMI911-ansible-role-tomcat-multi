@@ -2,7 +2,7 @@
 
 Installs Apache Tomcat Java Application server in multiple running instances. Most complete Tomcat installation, supporting, init.d script, application naming, hugepages, hardening, beautiful error pages, sha512 hashed passwords, JMX configuration, multiple Tomcat versions, separated catalina_home and caralina_base.
 
-[![Build Status](https://travis-ci.org/KAMI911/ansible-role-tomcat-multi.svg?branch=master)](https://travis-ci.org/KAMI911/ansible-role-tomcat-multi)
+[![Build Status](https://github.com/KAMI911/ansible-role-tomcat-multi/actions/workflows/test_ansible_module.yml/badge.svg)](https://github.com/KAMI911/ansible-role-tomcat-multi/actions/workflows/test_ansible_module.yml)
 
 ## Table of Contents
 
