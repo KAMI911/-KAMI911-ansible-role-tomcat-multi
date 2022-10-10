@@ -11,14 +11,6 @@ platforms:
       - jdk
       - centos7
 
-  - name: tomcat-centos7-10-server-jre
-    image: milcom/centos7-systemd
-    image_version: latest
-    privileged: true
-    groups:
-      - server-jre
-      - centos7
-
   - name: tomcat-centos7-10-jdk-firewalld-source
     image: milcom/centos7-systemd
     image_version: latest
@@ -45,7 +37,7 @@ provisioner:
     group_vars:
       jdk:
         java_type: 'jdk'
-      server-jre:
+      server_jre:
         java_type: 'serverjre'
       ubuntu14:
         tomcat_manage_firewalld: false
