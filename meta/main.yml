@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: tomcat-multi
+  role_name: tomcat_multi
   namespace: kami911
   author: Kálmán Szalai - KAMI
   description: Most complete Tomcat installation, supporting multiple base,\
