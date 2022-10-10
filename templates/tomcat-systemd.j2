@@ -17,6 +17,11 @@ Environment=TOMCAT_GROUP="{{ tomcat_system_group }}"
 Environment=JAVA_HOME="{{ java_home }}"
 Environment=JRE_HOME="{{ java_home }}"
 
+User={{ tomcat_system_user }}
+Group={{ tomcat_system_group }}
+
+OOMScoreAdjust=-1000
+
 ExecStart={{ tomcat_system_home }}{{ item.instance_name }}/bin/startup.sh
 ExecStop={{ tomcat_system_home }}{{ item.instance_name }}/bin/shutdown.sh
 
