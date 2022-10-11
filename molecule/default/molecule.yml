@@ -10,6 +10,16 @@ platforms:
     groups:
       - jdk
       - centos7
+      - no_firewalld
+
+  - name: tomcat-centos7-10-jdk-firewalld
+    image: milcom/centos7-systemd
+    image_version: latest
+    privileged: true
+    groups:
+      - jdk
+      - centos7
+      - firewalld
 
   - name: tomcat-centos7-10-jdk-firewalld-source
     image: milcom/centos7-systemd
@@ -18,15 +28,7 @@ platforms:
     groups:
       - jdk
       - centos7
-      - firewalld_source
-
-  - name: tomcat-centos7-10-server-jre-firewalld-source
-    image: milcom/centos7-systemd
-    image_version: latest
-    privileged: true
-    groups:
-      - server-jre
-      - centos7
+      - firewalld
       - firewalld_source
 
 provisioner:
@@ -50,6 +52,10 @@ provisioner:
       centos7:
         tomcat_manage_firewalld: true
       centos8:
+        tomcat_manage_firewalld: true
+      no_firewalld:
+        tomcat_manage_firewalld: false
+      firewalld:
         tomcat_manage_firewalld: true
       firewalld_source:
         tomcat_manage_firewalld_use_zone: false
